@@ -2719,7 +2719,7 @@ function tapClick(e) {
 }
 
 function triggerMouseEvent(type, ele, x, y) {
-  // using initMouseEvent instead of MouseEvent for our Android friends
+  // using initMouseEvent instead of MouseEvent for our Android services
   var clickEvent = document.createEvent("MouseEvents");
   clickEvent.initMouseEvent(type, true, true, window, 1, 0, 0, x, y, false, false, false, false, 0, null);
   clickEvent.isIonicTap = true;
@@ -23501,7 +23501,7 @@ function $FilterProvider($provide) {
  * @example
    <example>
      <file name="index.html">
-       <div ng-init="friends = [{name:'John', phone:'555-1276'},
+       <div ng-init="services = [{name:'John', phone:'555-1276'},
                                 {name:'Mary', phone:'800-BIG-MARY'},
                                 {name:'Mike', phone:'555-4321'},
                                 {name:'Adam', phone:'555-5678'},
@@ -23511,9 +23511,9 @@ function $FilterProvider($provide) {
        Search: <input ng-model="searchText">
        <table id="searchTextResults">
          <tr><th>Name</th><th>Phone</th></tr>
-         <tr ng-repeat="friend in friends | filter:searchText">
-           <td>{{friend.name}}</td>
-           <td>{{friend.phone}}</td>
+         <tr ng-repeat="service in services | filter:searchText">
+           <td>{{service.name}}</td>
+           <td>{{service.phone}}</td>
          </tr>
        </table>
        <hr>
@@ -23523,15 +23523,15 @@ function $FilterProvider($provide) {
        Equality <input type="checkbox" ng-model="strict"><br>
        <table id="searchObjResults">
          <tr><th>Name</th><th>Phone</th></tr>
-         <tr ng-repeat="friendObj in friends | filter:search:strict">
-           <td>{{friendObj.name}}</td>
-           <td>{{friendObj.phone}}</td>
+         <tr ng-repeat="serviceObj in services | filter:search:strict">
+           <td>{{serviceObj.name}}</td>
+           <td>{{serviceObj.phone}}</td>
          </tr>
        </table>
      </file>
      <file name="protractor.js" type="protractor">
-       var expectFriendNames = function(expectedNames, key) {
-         element.all(by.repeater(key + ' in friends').column(key + '.name')).then(function(arr) {
+       var expectServiceNames = function(expectedNames, key) {
+         element.all(by.repeater(key + ' in services').column(key + '.name')).then(function(arr) {
            arr.forEach(function(wd, i) {
              expect(wd.getText()).toMatch(expectedNames[i]);
            });
@@ -23542,18 +23542,18 @@ function $FilterProvider($provide) {
          var searchText = element(by.model('searchText'));
          searchText.clear();
          searchText.sendKeys('m');
-         expectFriendNames(['Mary', 'Mike', 'Adam'], 'friend');
+         expectServiceNames(['Mary', 'Mike', 'Adam'], 'service');
 
          searchText.clear();
          searchText.sendKeys('76');
-         expectFriendNames(['John', 'Julie'], 'friend');
+         expectServiceNames(['John', 'Julie'], 'service');
        });
 
        it('should search in specific fields when filtering with a predicate object', function() {
          var searchAny = element(by.model('search.$'));
          searchAny.clear();
          searchAny.sendKeys('i');
-         expectFriendNames(['Mary', 'Mike', 'Julie', 'Juliette'], 'friendObj');
+         expectServiceNames(['Mary', 'Mike', 'Julie', 'Juliette'], 'serviceObj');
        });
        it('should use a equal comparison when comparator is true', function() {
          var searchName = element(by.model('search.name'));
@@ -23561,7 +23561,7 @@ function $FilterProvider($provide) {
          searchName.clear();
          searchName.sendKeys('Julie');
          strict.click();
-         expectFriendNames(['Julie'], 'friendObj');
+         expectServiceNames(['Julie'], 'serviceObj');
        });
      </file>
    </example>
@@ -24299,7 +24299,7 @@ function limitToFilter(){
      <file name="index.html">
        <script>
          function Ctrl($scope) {
-           $scope.friends =
+           $scope.services =
                [{name:'John', phone:'555-1212', age:10},
                 {name:'Mary', phone:'555-9876', age:19},
                 {name:'Mike', phone:'555-4321', age:21},
@@ -24312,17 +24312,17 @@ function limitToFilter(){
          <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
          <hr/>
          [ <a href="" ng-click="predicate=''">unsorted</a> ]
-         <table class="friend">
+         <table class="service">
            <tr>
              <th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a>
                  (<a href="" ng-click="predicate = '-name'; reverse=false">^</a>)</th>
              <th><a href="" ng-click="predicate = 'phone'; reverse=!reverse">Phone Number</a></th>
              <th><a href="" ng-click="predicate = 'age'; reverse=!reverse">Age</a></th>
            </tr>
-           <tr ng-repeat="friend in friends | orderBy:predicate:reverse">
-             <td>{{friend.name}}</td>
-             <td>{{friend.phone}}</td>
-             <td>{{friend.age}}</td>
+           <tr ng-repeat="service in services | orderBy:predicate:reverse">
+             <td>{{service.name}}</td>
+             <td>{{service.phone}}</td>
+             <td>{{service.age}}</td>
            </tr>
          </table>
        </div>
@@ -24339,17 +24339,17 @@ function limitToFilter(){
   <example>
     <file name="index.html">
       <div ng-controller="Ctrl">
-        <table class="friend">
+        <table class="service">
           <tr>
             <th><a href="" ng-click="reverse=false;order('name', false)">Name</a>
               (<a href="" ng-click="order('-name',false)">^</a>)</th>
             <th><a href="" ng-click="reverse=!reverse;order('phone', reverse)">Phone Number</a></th>
             <th><a href="" ng-click="reverse=!reverse;order('age',reverse)">Age</a></th>
           </tr>
-          <tr ng-repeat="friend in friends">
-            <td>{{friend.name}}</td>
-            <td>{{friend.phone}}</td>
-            <td>{{friend.age}}</td>
+          <tr ng-repeat="service in services">
+            <td>{{service.name}}</td>
+            <td>{{service.phone}}</td>
+            <td>{{service.age}}</td>
           </tr>
         </table>
       </div>
@@ -24358,7 +24358,7 @@ function limitToFilter(){
     <file name="script.js">
       function Ctrl($scope, $filter) {
         var orderBy = $filter('orderBy');
-        $scope.friends = [
+        $scope.services = [
           { name: 'John',    phone: '555-1212',    age: 10 },
           { name: 'Mary',    phone: '555-9876',    age: 19 },
           { name: 'Mike',    phone: '555-4321',    age: 21 },
@@ -24367,7 +24367,7 @@ function limitToFilter(){
         ];
 
         $scope.order = function(predicate, reverse) {
-          $scope.friends = orderBy($scope.friends, predicate, reverse);
+          $scope.services = orderBy($scope.services, predicate, reverse);
         };
         $scope.order('-age',false);
       }
@@ -29044,7 +29044,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  * then uses `ngRepeat` to display every person:
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
     <file name="index.html">
-      <div ng-init="friends = [
+      <div ng-init="services = [
         {name:'John', age:25, gender:'boy'},
         {name:'Jessie', age:30, gender:'girl'},
         {name:'Johanna', age:28, gender:'girl'},
@@ -29056,11 +29056,11 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
         {name:'Patrick', age:40, gender:'boy'},
         {name:'Samantha', age:60, gender:'girl'}
       ]">
-        I have {{friends.length}} friends. They are:
-        <input type="search" ng-model="q" placeholder="filter friends..." />
+        I have {{services.length}} services. They are:
+        <input type="search" ng-model="q" placeholder="filter services..." />
         <ul class="example-animate-container">
-          <li class="animate-repeat" ng-repeat="friend in friends | filter:q">
-            [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+          <li class="animate-repeat" ng-repeat="service in services | filter:q">
+            [{{$index + 1}}] {{service.name}} who is {{service.age}} years old.
           </li>
         </ul>
       </div>
@@ -29102,25 +29102,25 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
       }
     </file>
     <file name="protractor.js" type="protractor">
-      var friends = element.all(by.repeater('friend in friends'));
+      var services = element.all(by.repeater('service in services'));
 
       it('should render initial data set', function() {
-        expect(friends.count()).toBe(10);
-        expect(friends.get(0).getText()).toEqual('[1] John who is 25 years old.');
-        expect(friends.get(1).getText()).toEqual('[2] Jessie who is 30 years old.');
-        expect(friends.last().getText()).toEqual('[10] Samantha who is 60 years old.');
-        expect(element(by.binding('friends.length')).getText())
-            .toMatch("I have 10 friends. They are:");
+        expect(services.count()).toBe(10);
+        expect(services.get(0).getText()).toEqual('[1] John who is 25 years old.');
+        expect(services.get(1).getText()).toEqual('[2] Jessie who is 30 years old.');
+        expect(services.last().getText()).toEqual('[10] Samantha who is 60 years old.');
+        expect(element(by.binding('services.length')).getText())
+            .toMatch("I have 10 services. They are:");
       });
 
        it('should update repeater when filter predicate changes', function() {
-         expect(friends.count()).toBe(10);
+         expect(services.count()).toBe(10);
 
          element(by.model('q')).sendKeys('ma');
 
-         expect(friends.count()).toBe(2);
-         expect(friends.get(0).getText()).toEqual('[1] Mary who is 28 years old.');
-         expect(friends.last().getText()).toEqual('[2] Samantha who is 60 years old.');
+         expect(services.count()).toBe(2);
+         expect(services.get(0).getText()).toEqual('[1] Mary who is 28 years old.');
+         expect(services.last().getText()).toEqual('[2] Samantha who is 60 years old.');
        });
       </file>
     </example>
