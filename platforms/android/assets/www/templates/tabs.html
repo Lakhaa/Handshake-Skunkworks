@@ -8,13 +8,53 @@
 
   <!-- Pets Tab -->
   <ion-tab title="Dashboard" icon="icon ion-home" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
+    <ion-view title="eBay Handshake">
+        <ion-content>
+            <div class="list">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Occasion</span>
+      <input type="text" placeholder="Occasion">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Date(DD/MM/YYYY)</span>
+      <input type="text" placeholder="Date(DD/MM/YYYY)">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Time</span>
+      <textarea placeholder="Time"></textarea>
+    </label>
+	<label class="item item-input item-floating-label">
+      <span class="input-label">Pincode</span>
+      <textarea placeholder="Pincode"></textarea>
+    </label>
+	<label class="item item-input item-floating-label">
+      <span class="input-label">Budget</span>
+      <textarea placeholder="Budget"></textarea>
+    </label>
+	<label class="item item-input item-floating-label">
+      <span class="input-label">No: of people</span>
+      <textarea placeholder="No: of people" ></textarea>
+    </label>
+  </div>
+  <div class="padding">
+            <button class="button button-block button-positive" ng-click="signIn(user)">
+				Plan my Event
+            </button>            
+          </div>
+        </ion-content>
+      </ion-view>
   </ion-tab>
 
+  
 
   <!-- Adopt Tab -->
-  <ion-tab title="Services" icon="icon ion-heart" href="#/tab/services">
+  <ion-tab title="Services" icon="icon ion-android-friends" href="#/tab/services">
     <ion-nav-view name="tab-services"></ion-nav-view>
+  </ion-tab>
+  
+  <!-- About Tab -->
+  <ion-tab title="Notifications" icon="icon ion-android-forums" href="#/tab/services">
+   <ion-nav-view name="tab-services"></ion-nav-view>
   </ion-tab>
 
 

@@ -26,8 +26,10 @@ C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\css\style.css \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\img\ionic.png \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\js\app.js \
+C:\Users\ljayaseelan\myApp\platforms\android\assets\www\js\categories.js \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\js\controllers.js \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\js\services.js \
+C:\Users\ljayaseelan\myApp\platforms\android\assets\www\js\subcategories.js \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\lib\ionic \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\lib\ionic\css \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\lib\ionic\fonts \
@@ -102,9 +104,13 @@ C:\Users\ljayaseelan\myApp\platforms\android\assets\www\plugins\com.ionic.keyboa
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\plugins\com.ionic.keyboard\www\keyboard.js \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\plugins\org.apache.cordova.device\www \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\plugins\org.apache.cordova.device\www\device.js \
+C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\categories.html \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\friend-detail.html \
+C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\service-detail.html \
+C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\subcategories.html \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\tab-account.html \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\tab-dash.html \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\tab-friends.html \
+C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\tab-services.html \
 C:\Users\ljayaseelan\myApp\platforms\android\assets\www\templates\tabs.html \
 C:\Users\ljayaseelan\myApp\platforms\android\ant-build\AndroidManifest.xml \

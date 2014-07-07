@@ -1,0 +1,9 @@
+<ion-view title="Sub Categories">
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="subcategory in subcategories" type="item-text-wrap" href="#/tab/subcategory/{{subcategories.id}}">
+        {{subcategories.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
