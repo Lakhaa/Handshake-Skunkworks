@@ -1,41 +1,19 @@
 <ion-view title="Checkout Summary" >
   <ion-content class="has-header">
   <ion-list>
-    <ion-item  type="item-text-wrap">
-   <div class="list">
-			<a ng-repeat="name in names" type="item-text-wrap" >
-				<table>				
-				<tr>
-				<td><h1><a href="#">{{ name.name }}</a></h1>	</td>							
-				<td><h2>Price: ${{ name.price }}</h2>	</td>	
-				<td><h2>No: of hours: 2</h2>	</td>					
-				</tr>
-				<tr>
-				<td></br></td>
-				</tr>
-				<tr>
-				<td><h3>Category: <a href="#">{{ name.category }}</a></h3>	</td>							
-				<td><h3>Sub Category: <a href="#">{{ name.subcategory }}</a></h3></td>								
-				</tr>
-				<tr>
-				<td></br></td>
-				</tr>
-				<tr>
-				<td><h2>Rating: {{ name.rating }}</h2>	</td>
-				<td><a href="#">Show Booked Slot</a></td>
-				</tr>
-				<tr>
-				<td></br><t/td>
-				</tr>
-				<tr>
-				<td><h2><img ng-src="{{ name.image }}" /></h2></td>				
-				</tr>
-				<br>
+    <ion-list>  
+      <ion-item ng-repeat="name in names" type="item-text-wrap" >        
+				<h1><a href="#">{{ name.name }}</a></h1>
+				<h2>Price: ${{ name.price }}</h2>
+				<h2>No: of hours: 2</h2>
+				<h2>Rating: {{ name.rating }}</h2>
+				<a href="#">Show Available Slot</a>
 				</br>
-				</table>							
-			</a>
+				</br>
+				
+				<h2><img ng-src="{{ name.image }}" /></h2>				
 		</div>
-	</ion-item>
+      </ion-item>
 	</ion-list>
 	</br>
 	</br> 
