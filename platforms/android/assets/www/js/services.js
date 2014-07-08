@@ -3,24 +3,47 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('Services', function() {
+.factory('Categories', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var services = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
+  var categories = [
+    { id: 0, name: 'People Speakers' },
+    { id: 1, name: 'Caterers' },
+    { id: 2, name: 'Venue' },
+    { id: 3, name: 'Photograpy' },
+	{ id: 4, name: 'Decorators' },
+	{ id: 5, name: 'Performance Artists' }
   ];
 
   return {
     all: function() {
-      return services;
+      return categories;
     },
-    get: function(serviceId) {
+    get: function(categoryId) {
       // Simple index lookup
-      return services[serviceId];
+      return categories[categoryId];
+    }
+  }
+})
+
+.factory('SubCategories', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var subcategories = [
+    { id: 0, name: 'Women' },
+    { id: 1, name: 'Philosophy' },
+    { id: 2, name: 'Career' }
+  ];
+
+  return {
+    all: function() {
+      return subcategories;
+    },
+    get: function(categoryId) {
+      // Simple index lookup
+      return subcategories[categoryId];
     }
   }
 });

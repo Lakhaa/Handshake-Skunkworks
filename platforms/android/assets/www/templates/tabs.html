@@ -8,59 +8,53 @@
 
   <!-- Pets Tab -->
   <ion-tab title="Dashboard" icon="icon ion-home" href="#/tab/dash">
-    <ion-view title="eBay Handshake">
+    <ion-view title='<img src="img/ebay.jpg"/> <img src="img/handshake.jpg"/>' >
         <ion-content>
             <div class="list">
     <label class="item item-input item-floating-label">
       <span class="input-label">Occasion</span>
-      <input type="text" placeholder="Occasion">
+      <input type="text" placeholder="Occasion (Eg: Birthday)">
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">Date(DD/MM/YYYY)</span>
-      <input type="text" placeholder="Date(DD/MM/YYYY)">
+      <input type="date" placeholder="Date(DD/MM/YYYY)">
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">Time</span>
-      <textarea placeholder="Time"></textarea>
+      <input type= "time" placeholder="Time"/>
     </label>
 	<label class="item item-input item-floating-label">
       <span class="input-label">Pincode</span>
-      <textarea placeholder="Pincode"></textarea>
+      <input type = "text" placeholder="Pincode"/>
     </label>
 	<label class="item item-input item-floating-label">
       <span class="input-label">Budget</span>
-      <textarea placeholder="Budget"></textarea>
+      <input type = "text" placeholder="Budget"/>
     </label>
 	<label class="item item-input item-floating-label">
       <span class="input-label">No: of people</span>
-      <textarea placeholder="No: of people" ></textarea>
+      <input type = "text" placeholder="No: of people" />
     </label>
   </div>
-  <div class="padding">
-            <button class="button button-block button-positive" ng-click="signIn(user)">
+  <div class="padding" id="planDiv">
+            <button id="plan" class="button button-block button-positive" onclick="window.location.href='#/tab/account'">
 				Plan my Event
+
             </button>            
           </div>
         </ion-content>
       </ion-view>
-  </ion-tab>
-
-  
-
-  <!-- Adopt Tab -->
-  <ion-tab title="Services" icon="icon ion-android-friends" href="#/tab/services">
-    <ion-nav-view name="tab-services"></ion-nav-view>
-  </ion-tab>
-  
-  <!-- About Tab -->
-  <ion-tab title="Notifications" icon="icon ion-android-forums" href="#/tab/services">
-   <ion-nav-view name="tab-services"></ion-nav-view>
-  </ion-tab>
+  </ion-tab> 
 
 
   <!-- About Tab -->
-  <ion-tab title="Account" icon="icon ion-gear-b" href="#/tab/account">
+  <ion-tab title="Cart" icon="icon ion-ios7-cart" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+  
+  <!-- Adopt Tab -->
+  <ion-tab title="Services" icon="icon ion-android-search" href="#/tab/categories">
+    <ion-nav-view name="tab-categories"></ion-nav-view>
   </ion-tab>
 
 
