@@ -48,21 +48,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-    .state('tab.services', {
-      url: '/services',
+    .state('tab.categories', {
+      url: '/categories',
       views: {
-        'tab-services': {
-          templateUrl: 'templates/tab-services.html',
-          controller: 'ServicesCtrl'
+        'tab-categories': {
+          templateUrl: 'templates/tab-categories.html',
+          controller: 'CategoriesCtrl'
         }
       }
     })
     .state('tab.service-detail', {
-      url: '/service/:serviceId',
+      url: '/category/:categoryId',
       views: {
         'tab-services': {
           templateUrl: 'templates/service-detail.html',
           controller: 'ServiceDetailCtrl'
+        }
+      }
+    })
+	.state('tab.services-list', {
+      url: '/subcategory/:subcategoryId',
+      views: {
+        'services-list': {
+          templateUrl: 'templates/services-list.html',
+          controller: 'ServicesListCtrl'
         }
       }
     })
@@ -76,7 +85,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-
+	
+	
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 

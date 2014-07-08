@@ -8,7 +8,7 @@
 
   <!-- Pets Tab -->
   <ion-tab title="Dashboard" icon="icon ion-home" href="#/tab/dash">
-    <ion-view title="eBay Handshake">
+    <ion-view title='<img src="img/ebay.jpg"/> <img src="img/handshake.jpg"/>' >
         <ion-content>
             <div class="list">
     <label class="item item-input item-floating-label">
@@ -37,8 +37,9 @@
     </label>
   </div>
   <div class="padding">
-            <button class="button button-block button-positive" ng-click="signIn(user)">
+            <button id="plan" class="button button-block button-positive" href="http://localhost:8100/#/tab/dash" >
 				Plan my Event
+				
             </button>            
           </div>
         </ion-content>
@@ -48,14 +49,14 @@
   
 
   <!-- Adopt Tab -->
-  <ion-tab title="Services" icon="icon ion-android-friends" href="#/tab/services">
-    <ion-nav-view name="tab-services"></ion-nav-view>
+  <ion-tab title="Services" icon="icon ion-android-search" href="#/tab/categories">
+    <ion-nav-view name="tab-categories"></ion-nav-view>
   </ion-tab>
   
-  <!-- About Tab -->
+  <!-- About Tab 
   <ion-tab title="Notifications" icon="icon ion-android-forums" href="#/tab/services">
-   <ion-nav-view name="tab-services"></ion-nav-view>
-  </ion-tab>
+   <ion-nav-view name="tab-notification"></ion-nav-view>
+  </ion-tab>-->
 
 
   <!-- About Tab -->
