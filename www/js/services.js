@@ -8,12 +8,12 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var categories = [
-    { id: 0, name: 'Performance Artists' },
+    { id: 0, name: 'People Speakers' },
     { id: 1, name: 'Caterers' },
     { id: 2, name: 'Venue' },
     { id: 3, name: 'Photograpy' },
 	{ id: 4, name: 'Decorators' },
-	{ id: 5, name: 'Donations' }
+	{ id: 5, name: 'Performance Artists' }
   ];
 
   return {
@@ -32,18 +32,18 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var subcategories = [
-    { id: 0, name: 'Guitar' },
-    { id: 1, name: 'Dance' },
-    { id: 2, name: 'Mimcry' }
+    { id: 0, name: 'Women' },
+    { id: 1, name: 'Philosophy' },
+    { id: 2, name: 'Career' }
   ];
 
   return {
     all: function() {
-      return categories;
+      return subcategories;
     },
     get: function(categoryId) {
       // Simple index lookup
-      return categories[categoryId];
+      return subcategories[categoryId];
     }
   }
 });

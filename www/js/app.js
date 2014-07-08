@@ -57,19 +57,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.service-detail', {
+	
+    .state('tab.subcatergories', {
       url: '/category/:categoryId',
       views: {
-        'tab-services': {
-          templateUrl: 'templates/service-detail.html',
+        'tab-categories': {
+          templateUrl: 'templates/subcategories.html',
           controller: 'ServiceDetailCtrl'
         }
       }
     })
+	
 	.state('tab.services-list', {
       url: '/subcategory/:subcategoryId',
       views: {
-        'services-list': {
+        'tab-categories': {
           templateUrl: 'templates/services-list.html',
           controller: 'ServicesListCtrl'
         }
