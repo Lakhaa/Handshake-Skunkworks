@@ -32,9 +32,9 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var subcategories = [
-    { id: 0, name: 'Women' },
-    { id: 1, name: 'Philosophy' },
-    { id: 2, name: 'Career' }
+    { id: 0, name: 'For Women' },
+    { id: 1, name: 'For Philosophy' },
+    { id: 2, name: 'For Career' }
   ];
 
   return {

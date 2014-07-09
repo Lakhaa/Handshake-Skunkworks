@@ -8,7 +8,7 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var categories = [
-    { id: 0, name: 'People Speakers' },
+    { id: 0, name: 'Professional Speakers' },
     { id: 1, name: 'Caterers' },
     { id: 2, name: 'Venue' },
     { id: 3, name: 'Photograpy' },
@@ -32,9 +32,9 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var subcategories = [
-    { id: 0, name: 'For Women' },
-    { id: 1, name: 'For Philosophy' },
-    { id: 2, name: 'For Career' }
+    { id: 0, name: 'Professional Speakers For Women' },
+    { id: 1, name: 'Professional Speakers For Philosophy' },
+    { id: 2, name: 'Professional Speakers For Career' }
   ];
 
   return {
